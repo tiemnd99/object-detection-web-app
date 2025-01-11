@@ -1,0 +1,26 @@
+/* templates/css/styles.css */
+body {
+    padding-top: 0px;
+    padding-bottom: 70px; /* Add padding to avoid footer overlap */
+}
+.container {
+    max-width: 800px;
+}
+.detected-image {
+    max-width: 100%;
+    height: auto;
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 10px 0;
+}
+header {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}

@@ -1,0 +1,23 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Cấu hình môi trường ảo
+venv/
+.env
+
+# Tệp nhật ký
+*.log
+
+# Tệp tạm thời
+*.tmp
+
+# Tệp tải lên
+uploads/
+
+# Kết quả phát hiện
+static/results/
+
+# Tệp mô hình
+yolov8n.pt

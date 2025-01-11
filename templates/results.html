@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detection Results</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Object Detection App</h1>
+    </header>
+    <div class="container mt-4">
+        <h2 class="text-center">Detection Results</h2>
+        <div class="text-center">
+            <img src="{{ url_for('static', filename='results/' + image_path.split('/')[-1]) }}" alt="Detected Image" class="detected-image img-thumbnail">
+        </div>
+        <ul class="list-group mt-4">
+            {% for detection in results %}
+                <li class="list-group-item">{{ detection.label }}: {{ '%.2f'|format(detection.confidence) }}</li>
+            {% endfor %}
+        </ul>
+        <div class="text-center mt-4">
+            <a href="/" class="btn btn-secondary">Upload another image</a>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2023 Object Detection App</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
