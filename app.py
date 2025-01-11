@@ -14,6 +14,19 @@ app.config['RESULTS_FOLDER'] = RESULTS_FOLDER
 def index():
     return render_template('index.html')
 
+"""
+Xử lý yêu cầu tải lên tệp từ người dùng.
+
+- Kiểm tra xem yêu cầu có chứa tệp hay không.
+- Nếu không có tệp, hiển thị thông báo lỗi và chuyển hướng về trang chủ.
+- Nếu có tệp nhưng không có tên tệp, hiển thị thông báo lỗi và chuyển hướng về trang chủ.
+- Nếu có tệp hợp lệ, lưu tệp vào thư mục đã cấu hình.
+- Gọi hàm `detect_objects` để phát hiện đối tượng trong tệp hình ảnh.
+- Hiển thị kết quả phát hiện đối tượng trên trang kết quả.
+
+Trả về:
+    Trang HTML hiển thị kết quả phát hiện đối tượng và đường dẫn đến hình ảnh đã xử lý.
+"""
 @app.route('/upload', methods=['POST'])
 def upload_file():
     if 'file' not in request.files:

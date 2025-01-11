@@ -7,6 +7,19 @@ import os
 model = YOLO('yolov8n.pt')
 
 def detect_objects(image_path):
+    """
+    Phát hiện đối tượng trong hình ảnh và vẽ các khung bao quanh đối tượng.
+
+    Args:
+        image_path (str): Đường dẫn đến hình ảnh cần phát hiện đối tượng.
+
+    Returns:
+        tuple: Một tuple chứa:
+            - detections (list): Danh sách các đối tượng được phát hiện, mỗi đối tượng là một dictionary với các khóa:
+                - 'label' (str): Nhãn của đối tượng.
+                - 'confidence' (float): Độ tin cậy của phát hiện.
+            - output_path (str): Đường dẫn đến hình ảnh đã được vẽ khung bao quanh đối tượng.
+    """
     # Perform object detection
     results = model(image_path)
     output_path = image_path.replace('uploads', 'static/results')
