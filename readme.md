@@ -1,5 +1,5 @@
 # Object Detection App
-
+![alt text](image.png)
 ## Giới thiệu
 Ứng dụng Object Detection App sử dụng mô hình YOLOv8 để phát hiện đối tượng trong hình ảnh. Người dùng có thể tải lên hình ảnh và nhận kết quả phát hiện với các bounding boxes và nhãn đối tượng.
 
